@@ -20,11 +20,34 @@ class Task:
     def set_scheduled_time(self, time: datetime) -> None:
         self.scheduled_time = time
 
-    def update_status(self, status: str) -> None:
+    def update_status(self, status: str, parent_pet=None) -> None:
         valid = {"pending", "completed", "skipped"}
         if status not in valid:
             raise ValueError(f"status must be one of {valid}")
         self.status = status
+
+        # If completed and recurrence is daily/weekly, create next occurrence
+        if status == "completed" and self.recurrence in {"daily", "weekly"} and parent_pet:
+            if self.required_by:
+                if self.recurrence == "daily":
+                    next_due = self.required_by + timedelta(days=1)
+                elif self.recurrence == "weekly":
+                    next_due = self.required_by + timedelta(weeks=1)
+                else:
+                    next_due = None
+                if next_due:
+                    new_task = Task(
+                        title=self.title,
+                        duration_minutes=self.duration_minutes,
+                        priority=self.priority,
+                        required_by=next_due,
+                        fixed=self.fixed,
+                        recurrence=self.recurrence,
+                        times_per_day=self.times_per_day,
+                        preferred_times=self.preferred_times,
+                        requires_active_attention=self.requires_active_attention
+                    )
+                    parent_pet.add_task(new_task)
 
     def get_details(self) -> dict:
         return {
@@ -99,6 +122,22 @@ class Owner:
                     continue
                 tasks.append(task)
         return tasks
+
+    def filter_tasks(self, status: Optional[str] = None, pet_name: Optional[str] = None) -> List[Task]:
+        """
+        Return tasks filtered by completion status and/or pet name.
+        status: 'pending', 'completed', 'skipped', or None (all)
+        pet_name: filter tasks for a specific pet, or None (all pets)
+        """
+        filtered = []
+        for pet in self.pets:
+            if pet_name and pet.name != pet_name:
+                continue
+            for task in pet.get_tasks():
+                if status and task.status != status:
+                    continue
+                filtered.append(task)
+        return filtered
 
 
 class Scheduler:

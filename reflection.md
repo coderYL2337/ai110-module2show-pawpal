@@ -32,12 +32,19 @@
 **a. Constraints and priorities**
 
 - What constraints does your scheduler consider (for example: time, priority, preferences)?
+    The scheduler considers task time windows, priority levels, pet needs (required_by, recurrence), and avoids conflicts based on active attention. Owner preferences are used only for sorting and filtering the output.
+
 - How did you decide which constraints mattered most?
+    Constraints driven by pet necessity (required_by, recurrence, fixed) mattered most, since care tasks must happen at specific times. Priority was used to order flexible tasks, while owner preferences were limited to display.
+
 
 **b. Tradeoffs**
 
 - Describe one tradeoff your scheduler makes.
+    The scheduler prioritizes avoiding conflicts (active attention) over strictly following owner preferences for task timing.
+
 - Why is that tradeoff reasonable for this scenario?
+    This is reasonable because pet care tasks must be performed without overlap when active attention is required, ensuring pets’ needs are met and the owner can realistically complete all tasks.
 
 ---
 
