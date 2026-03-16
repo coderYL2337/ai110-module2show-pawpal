@@ -1,15 +1,3 @@
-# 📸 Demo
-
-![Demo Screenshot](demo.jpg)
-## Features
-
-- Sorting by time, priority, pet, or status
-- Filtering by species and individual pet name
-- Conflict warnings for overlapping tasks and attention requirements
-- Daily and weekly recurrence: completed tasks auto-create next occurrence
-- Flexible scheduling: supports fixed and flexible tasks
-- Task status updates: mark tasks as completed or skipped
-- Plan explanation: generates a readable summary and highlights conflicts
 # PawPal+ (Module 2 Project)
 
 You are building **PawPal+**, a Streamlit app that helps a pet owner plan care tasks for their pet.
@@ -34,14 +22,6 @@ Your final app should:
 - Display the plan clearly (and ideally explain the reasoning)
 - Include tests for the most important scheduling behaviors
 
-## Smarter Scheduling
-
-PawPal+ now includes advanced scheduling features:
-
-- **Conflict detection:** Scheduler prevents overlapping tasks for the same pet and avoids conflicts when active attention is required across pets.
-- **Recurring tasks:** When a daily or weekly task is completed, a new instance is automatically scheduled for the next occurrence.
-- **Flexible constraints:** Tasks are scheduled based on necessity (required_by, recurrence, fixed), priority, and pet needs, not just owner preferences.
-- **Plan explanation:** The app generates a clear, human-readable summary of the daily plan and highlights any scheduling conflicts.
 
 ---
 ## Getting started
@@ -63,3 +43,27 @@ pip install -r requirements.txt
 5. Add tests to verify key behaviors.
 6. Connect your logic to the Streamlit UI in `app.py`.
 7. Refine UML so it matches what you actually built.
+
+
+## Smarter Scheduling
+
+PawPal+ now includes advanced scheduling features:
+
+- **Conflict detection:** Scheduler prevents overlapping tasks for the same pet and avoids conflicts when active attention is required across pets.
+- **Recurring tasks:** When a daily or weekly task is completed, a new instance is automatically scheduled for the next occurrence.
+- **Flexible constraints:** Tasks are scheduled based on necessity (required_by, recurrence, fixed), priority, and pet needs, not just owner preferences.
+- **Plan explanation:** The app generates a clear, human-readable summary of the daily plan and highlights any scheduling conflicts.
+
+## 📸 Demo
+
+![Demo Screenshot](demo.jpg)
+
+## Features
+
+- Sorting by time, priority, pet, or status
+- Filtering by species and individual pet name
+- Conflict warnings for overlapping tasks and attention requirements
+- Daily and weekly recurrence: completed tasks auto-create next occurrence
+- Flexible scheduling: supports fixed and flexible tasks
+- Task status updates: mark tasks as completed or skipped
+- Plan explanation: generates a readable summary and highlights conflicts
