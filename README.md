@@ -1,3 +1,15 @@
+# 📸 Demo
+
+![Demo Screenshot](demo.jpg)
+## Features
+
+- Sorting by time, priority, pet, or status
+- Filtering by species and individual pet name
+- Conflict warnings for overlapping tasks and attention requirements
+- Daily and weekly recurrence: completed tasks auto-create next occurrence
+- Flexible scheduling: supports fixed and flexible tasks
+- Task status updates: mark tasks as completed or skipped
+- Plan explanation: generates a readable summary and highlights conflicts
 # PawPal+ (Module 2 Project)
 
 You are building **PawPal+**, a Streamlit app that helps a pet owner plan care tasks for their pet.

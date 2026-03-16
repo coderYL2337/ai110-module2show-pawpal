@@ -53,12 +53,20 @@
 **a. How you used AI**
 
 - How did you use AI tools during this project (for example: design brainstorming, debugging, refactoring)?
+    I used AI for UML brainstorming, generating class skeletons, suggesting scheduling logic, and drafting/refining test cases.
+
 - What kinds of prompts or questions were most helpful?
+    Prompts that were specific about requirements, such as “generate a class diagram,” “implement conflict detection,” or “write a test for task completion,” produced the most useful results.
+
+
 
 **b. Judgment and verification**
 
 - Describe one moment where you did not accept an AI suggestion as-is.
+    When AI suggested using owner preferences to control scheduling, I rejected it because my requirements specified that preferences should only affect display, not scheduling logic.
+
 - How did you evaluate or verify what the AI suggested?
+    I compared AI suggestions to the project requirements and tested the code to ensure it matched the intended behavior.
 
 ---
 
@@ -67,12 +75,18 @@
 **a. What you tested**
 
 - What behaviors did you test?
+    I tested task completion, task addition to pets, and the scheduler’s ability to avoid conflicts and handle recurring tasks.
+
 - Why were these tests important?
+    These tests ensured that core features worked as expected and that the scheduling logic was robust.
 
 **b. Confidence**
 
 - How confident are you that your scheduler works correctly?
+    I am confident for typical scenarios, as tests pass and manual checks match expectations.
+
 - What edge cases would you test next if you had more time?
+    I would test overlapping tasks with complex recurrence, tasks with missing required_by, and simultaneous tasks for multiple pets with mixed attention requirements.
 
 ---
 
@@ -81,11 +95,15 @@
 **a. What went well**
 
 - What part of this project are you most satisfied with?
+     I am most satisfied with the modular class design and the scheduler’s ability to handle real-world constraints.
 
 **b. What you would improve**
 
 - If you had another iteration, what would you improve or redesign?
+    I would improve the UI-to-logic integration and add more comprehensive automated tests for edge cases.
+
 
 **c. Key takeaway**
 
 - What is one important thing you learned about designing systems or working with AI on this project?
+    I learned that clear requirements and critical evaluation are essential when collaborating with AI to ensure the final system meets real user needs.
