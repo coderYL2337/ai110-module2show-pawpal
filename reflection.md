@@ -5,12 +5,25 @@
 **a. Initial design**
 
 - Briefly describe your initial UML design.
+     My initial UML design defined four main classes with clear relationships: Owner manages pets, Pet represents each animal and its tasks, Task models care activities, and Scheduler generates daily plans.
+
 - What classes did you include, and what responsibilities did you assign to each?
+    I included Owner (manages pet info and preferences), Pet (represents each animal and its tasks), Task (models individual care activities), and Scheduler (generates daily plans and explains reasoning).
+
+- Three core actions a user should be able to perform:
+     add a pet, schedule a walk, see today's tasks.
 
 **b. Design changes**
 
 - Did your design change during implementation?
+    Yes
+    
 - If yes, describe at least one change and why you made it.
+    Task gained recurrence, status, and required_by — because feeding/walking times are driven by pet needs, not owner preference
+
+    Owner.preferences narrowed to sorting/filtering only — to separate necessity (what must happen) from preference (how to view it)
+
+    Scheduler gained has_conflict() and check_schedule() — because one owner cannot actively perform two tasks at the same time
 
 ---
 
